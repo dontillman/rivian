@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 
 class Controls extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { selected, moves, onBack, onForward } = this.props;
 
@@ -18,10 +14,10 @@ class Controls extends Component {
             placeholder="Selected task name"
             style={{ fontSize: '1rem' }}
             data-testid="selected-task-field"
-            value={selected && ''} />
+            value={selected || '' } />
           <button
             style={{ marginLeft: '1rem' }}
-            disabled={!selected || (-1 == moves)}
+            disabled={!selected || (-1 === moves)}
             data-testid="move-back-btn"
             onClick={onBack}
           >
@@ -29,7 +25,7 @@ class Controls extends Component {
           </button>
           <button
             style={{ marginLeft: '1rem' }}
-            disabled={!selected || (+1 == moves)}
+            disabled={!selected || (+1 === moves)}
             data-testid="move-forward-btn"
             onClick={onForward}
           >

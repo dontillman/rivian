@@ -34,7 +34,7 @@ class App extends Component {
   }
 
   handleBack = () => {
-    const {tasks, selected} = this.state.tasks;
+    const {tasks, selected} = this.state;
     let newTasks = [];
     for (let i = 0; i < tasks.length; i++) {
       const t = tasks[i];
@@ -48,7 +48,7 @@ class App extends Component {
   }
 
   handleForward = () => {
-    const {tasks, selected} = this.state.tasks;
+    const {tasks, selected} = this.state;
     let newTasks = [];
     for (let i = 0; i < tasks.length; i++) {
       const t = tasks[i];
