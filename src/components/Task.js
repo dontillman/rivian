@@ -4,9 +4,10 @@ const taskNameToId = name => {
   return `task-${name}`;
 }
 
-const Task = ({ name }) => {
+const Task = ({name, onClick}) => {
   return (
     <div
+      onClick={e => onClick(name)}
       style={{
         padding: '1rem',
         border: '1px solid #ccc',
